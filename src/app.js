@@ -3,7 +3,7 @@ const express = require("express");
 const hbs = require("hbs");
 const geocodeFetch = require("./utills/geocode");
 
-
+const port = process.env.Port || 3000
 
 const app = express();
 
@@ -21,13 +21,6 @@ hbs.registerPartials(partialPath);
 app.use(express.static(publicDirectoryPath));
 
 // routes
-app.get("", (req, res) => {
-  res.render("index", {
-    title: "Weather",
-    name: "G Mead",
-  });
-});
-
 app.get("/about", (req, res) => {
   res.render("about", {
     title: "About Me",
@@ -93,6 +86,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on port 3000.");
+app.listen(port, () => {
+  console.log(`Server is up on ${port}.`);
 });
