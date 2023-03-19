@@ -8,7 +8,7 @@ const forecastFetch = async (latitude, longitude) => {
       console.log("Unable to find location!");
     } else {
       return {
-        forecast: `${weatherData.current.weather_descriptions[0]}, It is currently ${weatherData.current.temperature} degrees out. There is a ${weatherData.current.precip}% chance of rain.`,
+        forecast: `${weatherData.current.weather_descriptions[0]}, It is currently ${weatherData.current.temperature} ° out. There is a ${weatherData.current.precip}% chance of rain.`,
         location: weatherData.location.timezone_id,
       };
     }
